@@ -49,8 +49,9 @@ module.exports = () => {
             const currentTicketOptions = configParser.getTicketById(customId)
             if (currentTicketOptions == false) return interaction.reply({embeds: [bot.errorLog.serverError(l.errors.anotherOption)]})
 
-            if (storage.get("amountOfUserTickets", interaction.member.id) == null || storage.get("amountOfUserTickets", interaction.member.id) == "false" || Number(storage.get("amountOfUserTickets", interaction.member.id)) < config.system.maxAmountOfTickets) {
 
+            if (storage.get("amountOfUserTickets", interaction.member.id) == null || storage.get("amountOfUserTickets", interaction.member.id) == "false" || Number(storage.get("amountOfUserTickets", interaction.member.id)) < config.system.maxAmountOfTickets) {
+              
                 //display modal
                 let modalReply = [];
                 if (currentTicketOptions.modal.enable && currentTicketOptions.modal.modalId.length > 0) {
@@ -112,12 +113,14 @@ module.exports = () => {
                     }
                 }
                 if (config.system.answerInEphemeralOnOpen && !currentTicketOptions.modal.enable) {
-                    if (interaction.isButton() || interaction.isStringSelectMenu()) {
+                    if (interaction.isButton()){
                         try {
                             await interaction.deferReply({ephemeral:config.system.answerInEphemeralOnOpen})
                         } catch{}
                     }else if (interaction.isChatInputCommand()){
-                        await interaction.deferReply({ephemeral:config.system.answerInEphemeralOnOpen})
+                        try {
+                            await interaction.deferReply({ephemeral:config.system.answerInEphemeralOnOpen})
+                        } catch{}
                     }else if (interaction.isStringSelectMenu()){
                         try {
                            await interaction.deferUpdate()
@@ -278,7 +281,7 @@ module.exports = () => {
                         firstmsg.pin()
                     })
                     
-                    log("system","created new ticket",[{key:"ticket",value:ticketName},{key:"user",value:interaction.user.tag}])
+                    log("system","created new ticket",[{key:"ticket",value:ticketName},{key:"user",value:interaction.user.username}])
                     require("../api/modules/events").onTicketOpen(interaction.user,ticketChannel,interaction.guild,new Date(),{name:ticketName,status:"open",ticketOptions:currentTicketOptions})
 
                     const channelbutton = new discord.ActionRowBuilder()
@@ -295,8 +298,14 @@ module.exports = () => {
                         if (currentTicketOptions.enableDmOnOpen) interaction.member.send({embeds:[bot.errorLog.custom(l.messages.newTicketDmTitle,currentTicketOptions.message,":ticket:",config.color)],components:[channelbutton]})
                     }
                     catch{log("system","failed to send DM")}
-
-                    if (((interaction.isButton() || interaction.isModalSubmit() || interaction.isStringSelectMenu()) && config.system.answerInEphemeralOnOpen) || interaction.isChatInputCommand()) interaction.editReply({embeds:[bot.errorLog.success(l.messages.createdTitle,l.messages.createdDescription)],components:[channelbutton]})
+                  
+                    if ((interaction.isButton() && config.system.answerInEphemeralOnOpen) || interaction.isChatInputCommand() || interaction.isModalSubmit()){
+                        if (interaction.deferred){
+                            interaction.editReply({embeds:[bot.errorLog.success(l.messages.createdTitle,l.messages.createdDescription)],components:[channelbutton]})
+                        }else{
+                            interaction.reply({embeds:[bot.errorLog.success(l.messages.createdTitle,l.messages.createdDescription)],components:[channelbutton]})
+                        }
+                    }
                     
                 })
             }else{
