@@ -382,6 +382,6 @@ this.actionRecorder.push({
     type:"debugsystem.success"
 })
 
-const token = config.token.fromENV ? process.env.TOKEN : config.token.value
+const token = config.token.fromENV ? process.env.token : config.token.value
 client.login(token)
 this.errorLog.log("debug","login with token")

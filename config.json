@@ -1,64 +1,64 @@
 {
     "color":"#ffffff",
-    "serverId":"server id (for slash cmds)",
+    "serverId":"1069755989986910349",
     "token":{
-        "value":"insert your bot token here",
-        "fromENV":false
+        "value":"MTE0NDMwMjkxMzA3MDU3MTU1MA.GEqtP5.Ey3ojbXPdhe0Qp-kkRIh5k48E5xeX-ejZTzaec",
+        "fromENV": false
     },
-    "adminRoles":["discord role id"],
-    "prefix":"!ticket ",
+    "adminRoles":["1081999500467507230"],
+    "prefix":".",
     "languageFile":"english",
 
     "status":{
         "enabled":true,
         "type":"PLAYING",
-        "text":"!ticket help"
+        "text":"Axel is SCAMMER!!"
     },
 
     "system":{
-        "maxAmountOfTickets":3,
-        "dmMessages":false,
+        "maxAmountOfTickets":2,
+        "dmMessages":true,
 
-        "memberRole":"member role (leave empty if you have no member role)",
-        "closeMode":"adminonly OR normal (select one!)",
+        "memberRole":" ",
+        "closeMode":"normal",
 
         "transcripts":"!!!! ALL SETTINGS FOR TRANSCRIPTS ARE LOCATED IN: transcriptconfig.json !!!!",
 
-        "showSlashcmdsInHelp":false,
+        "showSlashcmdsInHelp":true,
         "answerInEphemeralOnOpen":true
     },
 
-    "SUPPORT":"Take look at our wiki: https://docs.openticket.dj-dj.be or join our discord server: https://discord.dj-dj.be if you need support!",
+    "SUPPORT":"More useful infomation you can find on https://pd.onestate.fun/",
     "options":[
         {
             "id":"general",
-            "name":"Question",
-            "description":"Create this ticket if you have a question.",
+            "name":"REPORT",
+            "description":"Create this ticket if you want report police officer.",
             "icon":"🎫",
-            "label":"question",
+            "label":"REPORT",
             "type":"ticket",
 
             "color":"gray",
-            "adminroles":["role id"],
-            "readonlyAdminroles":["role id"],
-            "channelprefix":"question-",
-            "category":"category id (or leave empty)",
+            "adminroles":["1081999500467507230"],
+            "readonlyAdminroles":["1144316197840621638"],
+            "channelprefix":"ticket-",
+            "category":"1144333555913207849",
             "message":"You created a ticket!",
-            "enableDmOnOpen":true,
-            "ticketmessage":"The staff will help you soon!\n\n*Click on the button below to close the ticket!*",
+            "enableDmOnOpen":false,
+            "ticketmessage":"The leadership will claim your ticket soon!\n\n**Form:**\n- Name of the player you complain about\n- Reason why you complain\n- Date\n- Evidence (video/photo)\n",
 
             "thumbnail":{
                 "enable":false,
                 "url":"https://www.example.com/catmemes/cat.png"
             },
             "image":{
-                "enable":false,
+                "enable":true,
                 "url":"https://www.dj-dj.be/wp-content/uploads/2022/09/pfp-cropped.png"
             },
 
             "closedCategory":{
-                "enable":false,
-                "id":"category id"
+                "enable":true,
+                "id":"1144333584992313426"
             },
 
             "autoclose":{
@@ -70,8 +70,8 @@
                 "@here":true,
                 "@everyone":false,
                 "custom":{
-                    "enable":false,
-                    "roleId":"012345678910"
+                    "enable":true,
+                    "roleId":"1144316197840621638, 1081999500467507230"
                 }
             }
             
@@ -96,8 +96,8 @@
             "type":"role",
 
             "color":"red",
-            "roles":["discord role id"],
-            "mode":"add&remove|remove|add",
+            "roles":["1144319822923046942"],
+            "mode":"add",
             "enableDmOnOpen":true
             
         }
@@ -106,8 +106,7 @@
     "messages":[
         {
             "id":"1",
-            "name":"Choose Your Ticket",
-            "description":"You can click one of the buttons below!",
+            "name":"Create your ticket",
             "dropdown":false,
 
             "enableFooter":false,
@@ -122,14 +121,14 @@
             "enableImage":false,
             "image":"https://www.example.com/catmemes/cat.png",
 
-            "enableCustomColor":false,
+            "enableCustomColor":true,
             "color":"#ffffff",
 
             "options":["general","apply"],
             
             "other":{
                 "enableTicketExplaination":true,
-                "enableMaxTicketsWarning":true,
+                "enableMaxTicketsWarning":false,
                 
                 "customDropdownPlaceholder":{
                     "enable":false,

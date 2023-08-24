@@ -1,27 +1,27 @@
 {
     "sendTranscripts":{
-        "enableChannel":false,
-        "enableDM":false,
+        "enableChannel":true,
+        "enableDM":true,
 
-        "channel":"transcript channel id",
+        "channel":"1144311550182703126",
         "useHTMLtranscripts":true
     },
     "style":{
         "background":{
-            "enableCustomBackground":false,
-            "backgroundModus":"image OR color",
-            "backgroundData":"image url OR hex color (#ffffff)"
+            "enableCustomBackground":true,
+            "backgroundModus":"#ffffff",
+            "backgroundData":"#ffffff"
             
         },
         "header":{
-            "enableCustomHeader":false,
+            "enableCustomHeader":true,
             "backgroundColor":"#202225",
             "decoColor":"#F8BA00",
             "textColor":"#ffffff"
             
         },
         "stats":{
-            "enableCustomStats":false,
+            "enableCustomStats":true,
             "backgroundColor":"#202225",
             "keyTextColor":"#737373",
             "valueTextColor":"#ffffff",
