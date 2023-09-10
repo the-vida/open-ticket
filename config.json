@@ -2,11 +2,11 @@
     "color":"#ffffff",
     "serverId":"1069755989986910349",
     "token":{
-        "value":"MTE0NDMwMjkxMzA3MDU3MTU1MA.GEqtP5.Ey3ojbXPdhe0Qp-kkRIh5k48E5xeX-ejZTzaec",
+        "value":"MTE0NDMwMjkxMzA3MDU3MTU1MA.GUIyxV.Idpv0HbMOJQra0Ths5gJUODvL7dCYLyjOZlIqI",
         "fromENV": false
     },
     "adminRoles":["1081999500467507230"],
-    "prefix":".",
+    "prefix":"t.",
     "languageFile":"english",
 
     "status":{
@@ -16,7 +16,7 @@
     },
 
     "system":{
-        "maxAmountOfTickets":2,
+        "maxAmountOfTickets":3,
         "dmMessages":true,
 
         "memberRole":" ",
@@ -52,7 +52,7 @@
                 "url":"https://www.example.com/catmemes/cat.png"
             },
             "image":{
-                "enable":true,
+                "enable":false,
                 "url":"https://www.dj-dj.be/wp-content/uploads/2022/09/pfp-cropped.png"
             },
 
@@ -67,11 +67,11 @@
             },
 
             "ping":{
-                "@here":true,
+                "Created ticket.":true,
                 "@everyone":false,
                 "custom":{
                     "enable":true,
-                    "roleId":"1144316197840621638, 1081999500467507230"
+                    "roleId":"1081999500467507230"
                 }
             }
             
@@ -108,7 +108,7 @@
             "id":"1",
             "name":"Create your ticket",
             "dropdown":false,
-
+            "description":" ",
             "enableFooter":false,
             "footer":"Open Ticket v3.4.2 - I'm a footer!",
 
@@ -139,8 +139,8 @@
                     "text":"choose a category:"
                 },
                 "embedTitleURL":{
-                    "enable":false,
-                    "url":"https://www.dj-dj.be/projects/open-ticket"
+                    "enable":true,
+                    "url":"https://pd.onestate.fun/"
                 }
             }
         }
